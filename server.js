@@ -3,8 +3,6 @@ const { app } = require("./routes");
 const { publishListing } = require("./models/Listing");
 
 
-const authsetup = require("./middlewares/Auth");
-
 
 publishListing("title", "desc", 125, 50, 1);
 

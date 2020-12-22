@@ -24,9 +24,11 @@ function updateUsernameByIdOrUsername(id = "null", username, newUserName) {
         `)
 }
 
-async function loginUser(username, pass) {
-    const res = await pool.query(sql`SELECT id,username FROM user_account 
-    WHERE username = ${username} AND password = ${pass})`);
+async function validateUser(username, pass) {
+    const res = await pool.query(sql`SELECT id,username 
+    FROM user_account 
+    WHERE username = ${username} 
+    AND password = ${pass}`);
     return res;
 }
 
@@ -41,4 +43,4 @@ async function getUserListings(userId) {
 
 
 
-module.exports = { loginUser, createUser, deleteUserByUsername, updateUsernameByIdOrUsername, getUserListings }
+module.exports = { validateUser, createUser, deleteUserByUsername, updateUsernameByIdOrUsername, getUserListings }

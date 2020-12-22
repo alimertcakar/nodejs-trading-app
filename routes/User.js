@@ -4,10 +4,17 @@ const bodyParser = require('body-parser');
 const jsonParser = bodyParser.json();
 const passport = require("passport");
 const LocalStrategy = require('passport-local');
+const { validateUser } = require("../models/User");
 
 passport.use(new LocalStrategy(
     function (username, password, done) {
-        console.log(password)
+        validateUser(username, password).then(res => {
+            if (!res[0].username) {
+                console.log("haaayıır")
+                return done(null, false, { message: 'Kullanıcı adı/şifre yanlış.' });
+            }
+            return done(null, res[0]);
+        })
     }
 ));
 
