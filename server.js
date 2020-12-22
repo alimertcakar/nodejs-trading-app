@@ -2,12 +2,19 @@ const db = require("./db");
 const { app } = require("./routes");
 const { publishListing } = require("./models/Listing");
 
-var cors = require('cors')
-app.use(cors());
+
+const authsetup = require("./middlewares/Auth");
 
 
+publishListing("title", "desc", 125, 50, 1);
 
-publishListing("ilan basligi", "aciklama ikinci satici", 4);
+//ilan detayı getir
+
+// (async () => {
+//     const res = await getUserListings(4);
+//     console.log(res);
+// })();
+
 
 app.listen(80);
 
