@@ -8,5 +8,7 @@ var cors = require('cors')
 app.use(cors());
 
 
+app.listen(80);
+
 
 

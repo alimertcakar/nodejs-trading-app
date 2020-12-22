@@ -18,4 +18,5 @@ pool.on('error', (err, client) => {
 //çalışıyor mu testi 2+2
 pool.query("select 2+2").then(res => console.log(res.rows[0]))
 
+
 module.exports = pool;
