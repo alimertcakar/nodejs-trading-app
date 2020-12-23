@@ -4,8 +4,6 @@ const { publishListing } = require("./models/Listing");
 
 
 
-publishListing("title", "desc", 125, 50, 1);
-
 //ilan detayı getir
 
 // (async () => {

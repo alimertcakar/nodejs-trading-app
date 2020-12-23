@@ -29,7 +29,8 @@ const UserRoute = require("./routes/User");
 app.use("/hesap", UserRoute);
 const SecretRoute = require("./routes/Secret");
 app.use("/gizli", SecretRoute);
-
+const ListingRoute = require("./routes/Listing");
+app.use("/ilan", ListingRoute);
 
 
 exports.app = app;
