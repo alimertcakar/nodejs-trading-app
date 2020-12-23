@@ -6,6 +6,7 @@ const passport = require("passport");
 const LocalStrategy = require('passport-local');
 const { createUserAccount } = require("../controllers/UserController");
 const { validateUser } = require("../models/User");
+const { session } = require("passport");
 
 passport.use(new LocalStrategy(
     function (username, password, done) {
@@ -18,16 +19,18 @@ passport.use(new LocalStrategy(
     }
 ));
 
+// passport.authenticate('local')
 router
-    .post("/olustur", passport.authenticate('local'), jsonParser, async (req, res) => {
-        console.log(req.body)
-        const result = await createUserAccount("username", "password");
+    .post("/olustur", jsonParser, async (req, res) => {
+        console.log(req.session)
+        const { username, password } = req.body;
+        const result = await createUserAccount(username, password);
         res.send(result);
     })
     .post('/giris', passport.authenticate('local', {
         successRedirect: '/',
         failureRedirect: '/hesap/giris',
     }))
-    .get("/giris", (req, res) => { res.send("post at") })
+    .get("/giris", (req, res) => { res.send("giriş yapılmadı.giriş yapmak için post at.") })
 
 module.exports = router;
