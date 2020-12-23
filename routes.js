@@ -8,7 +8,7 @@ app.use(bodyParser.json());
 
 app.use(require('cookie-parser')());
 app.use(require('express-session')({
-    secret: 'keyboard cat',
+    secret: 'alimertsikrit',
     resave: true,
     saveUninitialized: true
 }));
@@ -27,7 +27,8 @@ const HomeRoute = require("./routes/Home");
 app.use("/", HomeRoute);
 const UserRoute = require("./routes/User");
 app.use("/hesap", UserRoute);
-
+const SecretRoute = require("./routes/Secret");
+app.use("/gizli", SecretRoute);
 
 
 

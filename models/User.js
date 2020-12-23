@@ -40,7 +40,11 @@ async function getUserListings(userId) {
     return res;
 }
 
+async function isExistingUsername(username) {
+    const res = await pool.query(sql`SELECT username FROM user_account 
+    WHERE username = ${username}`)
+    return res[0];
+}
 
 
-
-module.exports = { validateUser, createUser, deleteUserByUsername, updateUsernameByIdOrUsername, getUserListings }
+module.exports = { isExistingUsername, validateUser, createUser, deleteUserByUsername, updateUsernameByIdOrUsername, getUserListings }
