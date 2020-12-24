@@ -24,7 +24,26 @@ async function publishListing(title, description, price, stock, publisherId) {
     }
 }
 
+async function updateListingPrice(price, listingId) {
+    try {
+        const result = await pool.query(sql`UPDATE listing
+        SET price=${price} where id =${listingId}`);
+        return "İlan fiyatı başarıyla güncellendi";
+    }
+    catch (e) {
+        return e;
+    }
+}
 
+async function updateListingStock(stock, listingId) {
+    try {
+        const result = await pool.query(sql`UPDATE listing
+        SET stock=${stock} where id =${listingId}`);
+        return "İlan stoğu başarıyla güncellendi";
+    }
+    catch (e) {
+        return e;
+    }
+}
 
-
-module.exports = { publishListing }
+module.exports = { publishListing, updateListingPrice, updateListingStock }

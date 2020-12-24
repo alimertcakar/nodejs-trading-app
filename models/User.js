@@ -4,7 +4,8 @@ const sql = require('@databases/sql');
 pool.query(sql`CREATE TABLE IF NOT EXISTS user_account(
     id SERIAL PRIMARY KEY,
     username varchar(15) NOT NULL UNIQUE,
-    password varchar(30) NOT NULL
+    password varchar(30) NOT NULL,
+    balance INTEGER DEFAULT 0
     )`).catch(e => console.log(e))
 
 
@@ -46,5 +47,16 @@ async function isExistingUsername(username) {
     return res[0];
 }
 
+async function updateBalanceById(id, balance) {
+    const res = await pool.query(sql`UPDATE user_account SET balance=${balance}  
+    WHERE id = ${id}`)
+    return res[0];
+}
 
-module.exports = { isExistingUsername, validateUser, createUser, deleteUserByUsername, updateUsernameByIdOrUsername, getUserListings }
+
+module.exports = {
+    isExistingUsername, validateUser,
+    createUser, deleteUserByUsername,
+    updateUsernameByIdOrUsername, getUserListings,
+    updateBalanceById
+}

@@ -27,6 +27,12 @@ router
         const result = await createUserAccount(username, password);
         res.send(result);
     })
+    .post("/bakiyeGuncelle", jsonParser, async (req, res) => {
+        console.log(req.session)
+        const { balance, id } = req.body;
+        const result = await createUserAccount(id, balance);
+        res.send(result);
+    })
     .post('/giris', passport.authenticate('local', {
         successRedirect: '/',
         failureRedirect: '/hesap/giris',

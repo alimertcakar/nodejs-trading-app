@@ -1,4 +1,4 @@
-const { isExistingUsername, validateUser, createUser, deleteUserByUsername, updateUsernameByIdOrUsername,
+const { updateBalanceById: UserModelUpdateBalanceById, isExistingUsername, validateUser, createUser, deleteUserByUsername, updateUsernameByIdOrUsername,
     getUserListings } = require("../models/User");
 
 async function createUserAccount(username, password) {
@@ -11,5 +11,9 @@ async function createUserAccount(username, password) {
         return "Kullanıcı adı kullanımda.";
     }
 }
+async function updateBalanceById(id, balance) {
+    const res = await UserModelUpdateBalanceById(id, balance);
+    return res;
+}
 
-module.exports = { createUserAccount };
+module.exports = { createUserAccount, updateBalanceById };
