@@ -5,7 +5,7 @@ const jsonParser = bodyParser.json();
 const passport = require("passport");
 const LocalStrategy = require('passport-local');
 const { createUserAccount } = require("../controllers/UserController");
-const { validateUser } = require("../models/User");
+const { validateUser, updateBalanceById } = require("../models/User");
 const { session } = require("passport");
 
 passport.use(new LocalStrategy(
@@ -30,7 +30,7 @@ router
     .post("/bakiyeGuncelle", jsonParser, async (req, res) => {
         console.log(req.session)
         const { balance, id } = req.body;
-        const result = await createUserAccount(id, balance);
+        const result = await updateBalanceById(id, balance);
         res.send(result);
     })
     .post('/giris', passport.authenticate('local', {
