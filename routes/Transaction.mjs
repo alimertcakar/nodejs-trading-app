@@ -7,7 +7,7 @@ router.post("/yolla", async (req, res) => {
     const { senderUserId, receiverUserId, amount } = req.body;
 
     const result = await makeTransaction(senderUserId, receiverUserId, amount);
-    console.log(result);
+    res.send(result);
 })
 
 
