@@ -1,12 +1,11 @@
-const express = require("express");
+import express from "express";
 const router = express.Router();
-const bodyParser = require('body-parser');
+import bodyParser from 'body-parser';
 const jsonParser = bodyParser.json();
-const passport = require("passport");
+import passport from "passport";
+const { session } = passport;
 
-const { session } = require("passport");
-
-const { publishNewListing, updateListingPrice, updateListingStock } = require("../controllers/IlanController");
+import { publishNewListing, updateListingPrice, updateListingStock } from "../controllers/IlanController.mjs";
 
 
 // passport.authenticate('local')
@@ -29,4 +28,4 @@ router
     })
 
 
-module.exports = router;
+export default router;

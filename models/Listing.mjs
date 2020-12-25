@@ -1,5 +1,5 @@
-const pool = require("../db");
-const sql = require('@databases/sql');
+import pool from "../db.mjs";
+import sql from '@databases/sql';
 
 pool.query(sql`CREATE TABLE IF NOT EXISTS listing(
     id SERIAL PRIMARY KEY,
@@ -46,4 +46,4 @@ async function updateListingStock(stock, listingId) {
     }
 }
 
-module.exports = { publishListing, updateListingPrice, updateListingStock }
+export { publishListing, updateListingPrice, updateListingStock }

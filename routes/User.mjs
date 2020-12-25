@@ -1,12 +1,12 @@
-const express = require("express");
+import express from "express";
 const router = express.Router();
-const bodyParser = require('body-parser');
+import bodyParser from 'body-parser';
 const jsonParser = bodyParser.json();
-const passport = require("passport");
-const LocalStrategy = require('passport-local');
-const { createUserAccount } = require("../controllers/UserController");
-const { validateUser, updateBalanceById } = require("../models/User");
-const { session } = require("passport");
+import passport from "passport";
+import LocalStrategy from 'passport-local';
+import { createUserAccount } from "../controllers/UserController.mjs";
+import { validateUser, updateBalanceById } from "../models/User.mjs";
+const { session } = passport;
 
 passport.use(new LocalStrategy(
     function (username, password, done) {
@@ -39,4 +39,4 @@ router
     }))
     .get("/giris", (req, res) => { res.send("giriş yapılmadı.giriş yapmak için post at.") })
 
-module.exports = router;
+export default router;

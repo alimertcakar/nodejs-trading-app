@@ -1,5 +1,7 @@
-const { updateBalanceById: UserModelUpdateBalanceById, isExistingUsername, validateUser, createUser, deleteUserByUsername, updateUsernameByIdOrUsername,
-    getUserListings } = require("../models/User");
+import {
+    updateBalanceById as UserModelUpdateBalanceById, isExistingUsername, validateUser, createUser, deleteUserByUsername, updateUsernameByIdOrUsername,
+    getUserListings
+} from "../models/User.mjs";
 
 async function createUserAccount(username, password) {
     const user = await isExistingUsername(username);
@@ -16,4 +18,4 @@ async function updateBalanceById(id, balance) {
     return res;
 }
 
-module.exports = { createUserAccount, updateBalanceById };
+export { createUserAccount, updateBalanceById };

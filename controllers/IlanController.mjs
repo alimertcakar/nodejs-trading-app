@@ -1,4 +1,4 @@
-const { publishListing, updateListingPrice: ListingModelUpdateListingPrice, updateListingStock: ListingModelUpdateListingStock } = require("../models/Listing");
+import { publishListing, updateListingPrice as ListingModelUpdateListingPrice, updateListingStock as ListingModelUpdateListingStock } from "../models/Listing.mjs";
 
 
 async function publishNewListing(title, description, price, stock, publisherId) {
@@ -15,4 +15,4 @@ async function updateListingStock(stock, listingId) {
 }
 
 
-module.exports = { publishNewListing, updateListingPrice, updateListingStock };
+export { publishNewListing, updateListingPrice, updateListingStock };

@@ -1,7 +1,8 @@
-const createConnectionPool = require('@databases/pg');
+import createConnectionPool from '@databases/pg';
+import dotenv from "dotenv";
 
 if (process.env.NODE_ENV !== "production") {
-    require('dotenv').config();
+    dotenv.config();
 }
 
 // const { Pool } = require('pg')
@@ -29,4 +30,4 @@ const connectionString = process.env.connectionString;
 
 
 const db = createConnectionPool(connectionString);
-module.exports = db;
+export default db;

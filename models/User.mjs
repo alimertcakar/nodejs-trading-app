@@ -1,5 +1,5 @@
-const pool = require("../db");
-const sql = require('@databases/sql');
+import pool from "../db.mjs";
+import sql from '@databases/sql';
 
 pool.query(sql`CREATE TABLE IF NOT EXISTS user_account(
     id SERIAL PRIMARY KEY,
@@ -54,7 +54,7 @@ async function updateBalanceById(id, balance) {
 }
 
 
-module.exports = {
+export {
     isExistingUsername, validateUser,
     createUser, deleteUserByUsername,
     updateUsernameByIdOrUsername, getUserListings,
