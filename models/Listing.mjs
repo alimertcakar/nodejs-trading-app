@@ -46,4 +46,14 @@ async function updateListingStock(stock, listingId) {
     }
 }
 
-export { publishListing, updateListingPrice, updateListingStock }
+async function getAllListings() {
+    try {
+        const result = await pool.query(sql`SELECT * FROM listing`);
+        return result;
+    }
+    catch (e) {
+        return e;
+    }
+}
+
+export { publishListing, updateListingPrice, updateListingStock, getAllListings }

@@ -1,4 +1,4 @@
-import { publishListing, updateListingPrice as ListingModelUpdateListingPrice, updateListingStock as ListingModelUpdateListingStock } from "../models/Listing.mjs";
+import { getAllListings as ListingModelGetAllListings, publishListing, updateListingPrice as ListingModelUpdateListingPrice, updateListingStock as ListingModelUpdateListingStock } from "../models/Listing.mjs";
 
 
 async function publishNewListing(title, description, price, stock, publisherId) {
@@ -14,5 +14,11 @@ async function updateListingStock(stock, listingId) {
     return res;
 }
 
+async function getAllListings() {
+    const res = await ListingModelGetAllListings();
+    return res;
+}
 
-export { publishNewListing, updateListingPrice, updateListingStock };
+
+
+export { publishNewListing, updateListingPrice, updateListingStock, getAllListings };

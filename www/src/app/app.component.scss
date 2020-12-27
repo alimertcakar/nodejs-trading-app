@@ -1,0 +1,51 @@
+.ilan-container {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+.ilan {
+  display: inline-block;
+  border: 2px solid rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  max-width: 300px;
+  margin-top: 10px;
+  margin-right: 20px;
+  border-radius: 5px;
+  width: 300px;
+  cursor: pointer;
+  &__baslik {
+    font-weight: 700;
+    color: rgb(58, 58, 58);
+    font-size: 20px;
+    text-transform: capitalize;
+  }
+  &__aciklama {
+    display: block;
+  }
+  &__stok-ve-fiyat-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+  }
+}
+
+.ilan-ekle {
+  display: inline-block;
+  border: 2px solid rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  max-width: 300px;
+  margin-top: 10px;
+  margin-right: 20px;
+  border-radius: 5px;
+  width: 300px;
+  text-align: Center;
+  font-weight: 900;
+  font-size: 24px;
+  color: gray;
+  height: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}

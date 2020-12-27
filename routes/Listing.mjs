@@ -5,7 +5,7 @@ const jsonParser = bodyParser.json();
 import passport from "passport";
 const { session } = passport;
 
-import { publishNewListing, updateListingPrice, updateListingStock } from "../controllers/IlanController.mjs";
+import { publishNewListing, updateListingPrice, updateListingStock, getAllListings } from "../controllers/IlanController.mjs";
 
 
 // passport.authenticate('local')
@@ -26,6 +26,9 @@ router
         const result = await updateListingStock(stock, id);
         res.send(result)
     })
-
+    .get("/", async (req, res) => {
+        let result = await getAllListings();
+        res.send(result)
+    })
 
 export default router;
