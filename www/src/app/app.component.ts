@@ -8,7 +8,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class AppComponent {
   title = 'nodetrading';
-  listings: object[] = [];
+  listings: any[] = [];
   constructor(private http: HttpClient) {}
 
   ngOnInit() {

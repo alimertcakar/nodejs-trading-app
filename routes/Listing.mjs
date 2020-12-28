@@ -12,6 +12,7 @@ import { publishNewListing, updateListingPrice, updateListingStock, getAllListin
 router
     .post("/olustur", jsonParser, async (req, res) => {
         const { title, description, price, stock, publisherId } = req.body;
+        console.log(req.body)
         const result = await publishNewListing(title, description, price, stock, publisherId);
         console.log(result);
         res.send(result)

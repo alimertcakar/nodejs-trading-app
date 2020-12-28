@@ -1,0 +1,13 @@
+<div *ngIf="showMePartially">
+  <label for="title">İlan adı:</label><br>
+  <input type="text" id="title" name="title" value="süper ilanım"><br>
+  <label for="description">İlan açıklaması:</label><br>
+  <input type="text" id="description" name="description" value="şöyle iyi böyle iyi"><br>
+  <label for="price">İlan Fiyatı:</label><br>
+  <input type="text" id="price" name="price" value="1500"><br>
+  <label for="stock">Stok:</label><br>
+  <input type="text" id="stock" name="stock" value="10"><br>
+  <label for="publisherId">satıcı id:</label><br>
+  <input type="text" id="publisherId" name="publisherId" value="1"><br>
+  <button (click)="yollaKaderimYolla()">Yolla</button>
+</div>
