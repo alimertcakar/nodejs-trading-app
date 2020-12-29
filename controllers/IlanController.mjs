@@ -1,4 +1,7 @@
-import { getAllListings as ListingModelGetAllListings, publishListing, updateListingPrice as ListingModelUpdateListingPrice, updateListingStock as ListingModelUpdateListingStock } from "../models/Listing.mjs";
+import {
+    getAllListings as ListingModelGetAllListings, publishListing, updateListingPrice as ListingModelUpdateListingPrice,
+    updateListingStock as ListingModelUpdateListingStock
+} from "../models/Listing.mjs";
 
 
 async function publishNewListing(title, description, price, stock, publisherId) {
