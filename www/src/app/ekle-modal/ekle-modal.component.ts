@@ -11,15 +11,14 @@ export class EkleModalComponent implements OnInit {
 
   constructor() {}
 
-  yollaKaderimYolla(): void {
-    //acıları bana yolla
-    let title = (<HTMLInputElement>document.getElementById('title')).value;
-    let stock = (<HTMLInputElement>document.getElementById('stock')).value;
-    let price = (<HTMLInputElement>document.getElementById('price')).value;
-    let publisherId = (<HTMLInputElement>document.getElementById('publisherId'))
-      .value;
-    let description = (<HTMLInputElement>document.getElementById('description'))
-      .value;
+  submit(ilanform: any) {
+    const {
+      title,
+      stock,
+      price,
+      publisherId,
+      description,
+    } = ilanform.form.value;
 
     axios.post('/api/ilan/olustur', {
       title: title,

@@ -14,7 +14,6 @@ export class AppComponent {
   ngOnInit() {
     this.http.get<any>('/api/ilan/').subscribe((data: any) => {
       this.listings.push(data);
-      console.log(this.listings[0]);
     });
   }
 }

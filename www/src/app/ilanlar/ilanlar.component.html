@@ -1,15 +1,12 @@
-<h1>İlanlar</h1>
+<h1 class="text-center">İlanlar</h1>
 
-<div>
-  {{listings}}
-</div>
-<!-- <div class="ilan-container">
+<div class="ilan-container">
   <div class="ilan" *ngFor="let listing of listings[0]; let i = index">
     <span class="ilan__baslik"> {{listing.title}} </span>
     <span class="ilan__aciklama"> {{listing.description}} </span>
     <div class="ilan__stok-ve-fiyat-container">
-      <span> Stokta {{listing.stock}} </span>
+      <span> Stokta <strong>{{listing.stock}}</strong> </span>
       <span> {{listing.price}} TL </span>
     </div>
   </div>
-</div> -->
+</div>

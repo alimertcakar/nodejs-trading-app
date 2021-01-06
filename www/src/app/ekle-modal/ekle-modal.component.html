@@ -1,13 +1,41 @@
 <div *ngIf="showMePartially">
-  <label for="title">İlan adı:</label><br>
-  <input type="text" id="title" name="title" value="süper ilanım"><br>
-  <label for="description">İlan açıklaması:</label><br>
-  <input type="text" id="description" name="description" value="şöyle iyi böyle iyi"><br>
-  <label for="price">İlan Fiyatı:</label><br>
-  <input type="text" id="price" name="price" value="1500"><br>
-  <label for="stock">Stok:</label><br>
-  <input type="text" id="stock" name="stock" value="10"><br>
-  <label for="publisherId">satıcı id:</label><br>
-  <input type="text" id="publisherId" name="publisherId" value="1"><br>
-  <button (click)="yollaKaderimYolla()">Yolla</button>
+  <form #ilanform="ngForm" (ngSubmit)="submit(ilanform)">
+    <div class="from-group">
+      <label for="title">İlan adı:</label><br>
+      <input required minlength="5" ngModel #title="ngModel" type="text" id="title" name="title"
+        value="süper ilanım"><br>
+      <div *ngIf="title.touched && !title.valid" class="alert alert-danger">
+        <div *ngIf="title.errors?.required">
+          Bu alan gerekli!
+        </div>
+        <div *ngIf="title.errors?.minlength">
+          Minimum 5 karakter uzunluğunda olmalıdır!
+        </div>
+      </div>
+      <label for="description">İlan açıklaması:</label><br>
+      <input required minlength="5" ngModel #description="ngModel" ngModel #description type="text" id="description"
+        name="description" value="şöyle iyi böyle iyi"><br>
+      <div *ngIf="description.touched && !description.valid" class="alert alert-danger">
+        <div *ngIf="description.errors?.required">
+          Bu alan gerekli!
+        </div>
+        <div *ngIf="description.errors?.minlength">
+          Minimum 5 karakter uzunluğunda olmalıdır!
+        </div>
+      </div>
+
+      <label for="price">İlan Fiyatı:</label><br>
+      <input required ngModel #price="ngModel" #price type="text" id="price" name="price" value="1500"><br>
+      <div *ngIf="price.touched && !price.valid" class="alert alert-danger">Bu alan gerekli!</div>
+
+      <label for="stock">Stok:</label><br>
+      <input required ngModel #stock="ngModel" type="text" id="stock" name="stock" value="10"><br>
+      <div *ngIf="stock.touched && !stock.valid" class="alert alert-danger">Bu alan gerekli!</div>
+
+      <label for="publisherId">this.satıcıId:</label><br>
+      <input required ngModel #publisherId="ngModel" type="text" id="publisherId" name="publisherId" value="1"><br>
+      <div *ngIf="publisherId.touched && !publisherId.valid" class="alert alert-danger">Bu alan gerekli!</div>
+      <button class="btn  btn-primary" type="submit" [disabled]="!ilanform.valid">Yolla</button>
+    </div>
+  </form>
 </div>

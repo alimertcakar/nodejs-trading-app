@@ -1,11 +1,12 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ListingsService {
-  constructor() {}
+  constructor(private http: HttpClient) {}
   getListings() {
-    return 'listing';
+    return this.http.get<any>('/api/ilan/');
   }
 }

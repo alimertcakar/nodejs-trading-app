@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ListingsService } from '../listings.service';
+import { ListingsService } from '../ilanlar.service';
 
 @NgModule({
   declarations: [],

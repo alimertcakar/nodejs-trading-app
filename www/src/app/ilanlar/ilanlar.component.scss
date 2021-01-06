@@ -2,6 +2,7 @@
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
+  justify-content: center;
 }
 
 .ilan {
@@ -15,7 +16,7 @@
   width: 300px;
   cursor: pointer;
   &__baslik {
-    font-weight: 700;
+    font-weight: 500;
     color: rgb(58, 58, 58);
     font-size: 20px;
     text-transform: capitalize;
@@ -27,29 +28,5 @@
     display: flex;
     justify-content: space-between;
     margin-top: 10px;
-  }
-}
-
-.ilan-ekle {
-  display: inline-block;
-  border: 2px solid rgba(0, 0, 0, 0.1);
-  padding: 15px;
-  max-width: 400px;
-  margin-top: 10px;
-  margin-right: 20px;
-  border-radius: 5px;
-  width: 400px;
-  text-align: Center;
-  font-size: 24px;
-  min-height: 120px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-}
-
-@media (min-width: 1200px) {
-  .custom-container {
-    max-width: 960px;
   }
 }

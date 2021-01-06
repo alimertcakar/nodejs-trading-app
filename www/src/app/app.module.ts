@@ -9,7 +9,9 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { IlanEkleComponent } from './ilan-ekle/ilan-ekle.component';
 import { EkleModalComponent } from './ekle-modal/ekle-modal.component';
-import { ListingsComponent } from './listings/listings.component';
+import { ListingsComponent } from './ilanlar/ilanlar.component';
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +19,8 @@ import { ListingsComponent } from './listings/listings.component';
     IlanEkleComponent,
     EkleModalComponent,
     ListingsComponent,
+    HeaderComponent,
+    FooterComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
   providers: [],
