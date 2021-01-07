@@ -1,0 +1,25 @@
+.navbar-brand {
+  padding: 4px 14px;
+  background-color: #ffe800;
+  color: #000;
+}
+
+.btn-success.focus,
+.btn-success:focus {
+  box-shadow: none !important;
+  outline: none;
+  background-color: #ffe800 !important;
+  color: #444 !important;
+}
+.btn-success:hover {
+  background-color: #ffe800 !important;
+  color: #444 !important;
+}
+
+.btn-success {
+  background-color: #ffe800;
+  border: #ffe800;
+  color: #444;
+  position: relative;
+  top: 3px;
+}

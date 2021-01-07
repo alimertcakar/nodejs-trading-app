@@ -12,6 +12,7 @@ import { EkleModalComponent } from './ekle-modal/ekle-modal.component';
 import { ListingsComponent } from './ilanlar/ilanlar.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
+import { LoginRegisterComponent } from './login-register/login-register.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { FooterComponent } from './footer/footer.component';
     ListingsComponent,
     HeaderComponent,
     FooterComponent,
+    LoginRegisterComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
   providers: [],
