@@ -3,26 +3,40 @@
   flex-wrap: wrap;
   flex-direction: row;
   justify-content: center;
+
+  :hover {
+    background-color: #f0f6ff;
+  }
+}
+
+.ilan:nth-of-type(even) {
+  background-color: #f2f2f2;
 }
 
 .ilan {
   display: inline-block;
   border: 2px solid rgba(0, 0, 0, 0.1);
   padding: 15px;
-  max-width: 300px;
-  margin-top: 10px;
+  max-width: 100%;
+  margin-top: 0px;
   margin-right: 20px;
   border-radius: 5px;
-  width: 300px;
+  width: 100%;
   cursor: pointer;
+  border-bottom: none;
+  border-radius: 0;
+  padding-top: 2px;
+  padding-bottom: 2px;
+
   &__baslik {
-    font-weight: 500;
-    color: rgb(58, 58, 58);
+    color: #000;
     font-size: 20px;
     text-transform: capitalize;
   }
   &__aciklama {
     display: block;
+    font-size: 14px;
+    color: darkgray;
   }
   &__stok-ve-fiyat-container {
     display: flex;

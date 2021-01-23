@@ -1,12 +1,12 @@
-<h1 class="text-center">İlanlar</h1>
-
+<h1 class="text-left" style="font-size:16px;font-weight:normal">Vitrin</h1>
+<hr>
 <div class="ilan-container">
   <div class="ilan" *ngFor="let listing of listings[0]; let i = index">
     <span class="ilan__baslik"> {{listing.title}} </span>
     <span class="ilan__aciklama"> {{listing.description}} </span>
     <div class="ilan__stok-ve-fiyat-container">
-      <span> Stokta <strong>{{listing.stock}}</strong> </span>
-      <span> {{listing.price}} TL </span>
+      <span> Stok: {{listing.stock}} </span>
+      <span style="position:relative;top:-25px;color: #910000;"> {{listing.price}} TL </span>
     </div>
   </div>
 </div>
