@@ -12,7 +12,11 @@ import { EkleModalComponent } from './ekle-modal/ekle-modal.component';
 import { ListingsComponent } from './ilanlar/ilanlar.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
-import { LoginRegisterComponent } from './login-register/login-register.component';
+import { IlanSayfasiComponent } from './ilan-sayfasi/ilan-sayfasi.component';
+import { HomeComponentComponent } from './home-component/home-component.component';
+import { IlanEklemeSayfasiComponent } from './ilan-ekleme-sayfasi/ilan-ekleme-sayfasi.component';
+import { GirisYapSayfasiComponent } from './giris-yap-sayfasi/giris-yap-sayfasi.component';
+import { UyeOlSayfasiComponent } from './uye-ol-sayfasi/uye-ol-sayfasi.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +26,11 @@ import { LoginRegisterComponent } from './login-register/login-register.componen
     ListingsComponent,
     HeaderComponent,
     FooterComponent,
-    LoginRegisterComponent,
+    IlanSayfasiComponent,
+    HomeComponentComponent,
+    IlanEklemeSayfasiComponent,
+    GirisYapSayfasiComponent,
+    UyeOlSayfasiComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
   providers: [],
