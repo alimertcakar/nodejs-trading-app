@@ -13,7 +13,7 @@ export class UyeOlSayfasiComponent implements OnInit {
   register(loginregisterform: any) {
     const { username, password } = loginregisterform.form.value;
 
-    axios.post('/hesap/giris', {
+    axios.post('/hesap/olustur', {
       username: username,
       password: password,
     });

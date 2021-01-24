@@ -10,8 +10,8 @@ const routes: Routes = [
   { path: '', component: HomeComponentComponent, pathMatch: 'full' },
   { path: 'ilan/:id', component: IlanSayfasiComponent },
   { path: 'ilan-ekle', component: IlanEklemeSayfasiComponent },
-  { path: 'login', component: GirisYapSayfasiComponent },
-  { path: 'register', component: UyeOlSayfasiComponent },
+  { path: 'giris', component: GirisYapSayfasiComponent },
+  { path: 'kayit', component: UyeOlSayfasiComponent },
 ];
 
 @NgModule({

@@ -2,7 +2,7 @@
   <form #ilanform="ngForm" (ngSubmit)="submit(ilanform)">
     <div class="from-group">
       <label for="title">İlan adı:</label><br>
-      <input required minlength="5" ngModel #title="ngModel" type="text" id="title" name="title"
+      <input class="form-control" required minlength="5" ngModel #title="ngModel" type="text" id="title" name="title"
         value="süper ilanım"><br>
       <div *ngIf="title.touched && !title.valid" class="alert alert-danger">
         <div *ngIf="title.errors?.required">
@@ -13,8 +13,8 @@
         </div>
       </div>
       <label for="description">İlan açıklaması:</label><br>
-      <input required minlength="5" ngModel #description="ngModel" ngModel #description type="text" id="description"
-        name="description" value="şöyle iyi böyle iyi"><br>
+      <input class="form-control" required minlength="5" ngModel #description="ngModel" ngModel #description type="text"
+        id="description" name="description" value="şöyle iyi böyle iyi"><br>
       <div *ngIf="description.touched && !description.valid" class="alert alert-danger">
         <div *ngIf="description.errors?.required">
           Bu alan gerekli!
@@ -25,15 +25,17 @@
       </div>
 
       <label for="price">İlan Fiyatı:</label><br>
-      <input required ngModel #price="ngModel" #price type="text" id="price" name="price" value="1500"><br>
+      <input class="form-control" required ngModel #price="ngModel" #price type="text" id="price" name="price"
+        value="1500"><br>
       <div *ngIf="price.touched && !price.valid" class="alert alert-danger">Bu alan gerekli!</div>
 
       <label for="stock">Stok:</label><br>
-      <input required ngModel #stock="ngModel" type="text" id="stock" name="stock" value="10"><br>
+      <input class="form-control" required ngModel #stock="ngModel" type="text" id="stock" name="stock" value="10"><br>
       <div *ngIf="stock.touched && !stock.valid" class="alert alert-danger">Bu alan gerekli!</div>
 
       <label for="publisherId">this.satıcıId:</label><br>
-      <input required ngModel #publisherId="ngModel" type="text" id="publisherId" name="publisherId" value="1"><br>
+      <input class="form-control" required ngModel #publisherId="ngModel" type="text" id="publisherId"
+        name="publisherId" value="1"><br>
       <div *ngIf="publisherId.touched && !publisherId.valid" class="alert alert-danger">Bu alan gerekli!</div>
       <button class="btn  btn-primary" type="submit" [disabled]="!ilanform.valid">Yolla</button>
     </div>

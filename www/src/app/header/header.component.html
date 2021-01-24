@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-light" style="background: #3f475f;  height: 65px;">
   <div class="container">
-    <a class="navbar-brand" href="#" style="font-weight:bold">alimertten.com</a>
+    <a class="navbar-brand" style="font-weight:bold" routerLink="/">alimertten.net</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -27,12 +27,10 @@
         <input class="form-control me-2" type="search" placeholder="İlan, kategori veya marka ara" aria-label="Search"
           style="background: #2f3546;border:none; color:rgb(47, 53, 70); font-weight:600">
       </form>
-      <a class="btn  ml-2" href="#" style="color:#fff;font-size:12px">Giriş Yap</a>
-      <a class="btn ml-2" href="#" style="color:#fff;font-size:12px">Üye Ol</a>
+      <a class="btn  ml-2" routerLink="/giris" style="color:#fff;font-size:12px">Giriş Yap</a>
+      <a class="btn ml-2" routerLink="/kayit" style="color:#fff;font-size:12px">Üye Ol</a>
       <button class="btn btn-success" type="submit" style="background: #489af1;color:#fff!important;font-weight:bold!important; border-radius:0px;font-size:12px;    padding: 10px 19px 8px 19px;
-          margin-left: 13px;position:relative; top:-1px">Ücretsiz
-        İlan
-        Ver</button>
+          margin-left: 13px;position:relative; top:-1px" routerLink="/ilan-ekle">Ücretsiz İlan Ver</button>
     </div>
   </div>
 </nav>
