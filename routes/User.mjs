@@ -11,7 +11,6 @@ const { session } = passport;
 passport.use(new LocalStrategy(
     function (username, password, done) {
         validateUser(username, password).then(res => {
-            res.cookie('userid', res[0]?.id, { maxAge: 2592000000 });  // Expires in one month
             if (!res[0]?.username) {
                 return done(null, false, { message: 'Kullanıcı adı/şifre yanlış.' });
             }
@@ -19,6 +18,11 @@ passport.use(new LocalStrategy(
         })
     }
 ));
+
+passport.serializeUser(function (user, done) {
+    global.userid = user.id;
+    done(null, user.id);
+});
 
 // passport.authenticate('local')
 router
@@ -34,10 +38,12 @@ router
         const result = await updateBalanceById(id, balance);
         res.send(result);
     })
-    .post('/giris', passport.authenticate('local', {
-        successRedirect: '/',
-        failureRedirect: '/api/hesap/giris',
-    }))
+    .post('/giris', passport.authenticate('local'), (req, res) => {
+        res.cookie('userid', global.userid, { maxAge: 2592000000 });  // Expires in one month
+
+        res.send("Giriş Başarılı");
+
+    })
     .get("/giris", (req, res) => { res.send("giriş yapılmadı.giriş yapmak için post at.") })
 
 export default router;

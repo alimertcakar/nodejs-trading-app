@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import axios from 'axios';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-ekle-modal',
@@ -9,7 +10,7 @@ import axios from 'axios';
 export class EkleModalComponent implements OnInit {
   @Input() showMePartially!: boolean;
 
-  constructor() {}
+  constructor(private router: Router) {}
 
   submit(ilanform: any) {
     const {
@@ -20,14 +21,23 @@ export class EkleModalComponent implements OnInit {
       description,
     } = ilanform.form.value;
 
-    axios.post('/api/ilan/olustur', {
-      title: title,
-      stock: stock,
-      price: price,
-      publisherId: publisherId,
-      description: description,
-    });
+    axios
+      .post('/api/ilan/olustur', {
+        title: title,
+        stock: stock,
+        price: price,
+        publisherId: getCookieValue('userid'),
+        description: description,
+      })
+      .then((r) => {
+        this.router.navigateByUrl('/');
+      });
   }
 
   ngOnInit(): void {}
+}
+
+function getCookieValue(a) {
+  var b = document.cookie.match('(^|;)\\s*' + a + '\\s*=\\s*([^;]+)');
+  return b ? b.pop() : '';
 }
