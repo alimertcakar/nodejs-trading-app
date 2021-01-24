@@ -5,10 +5,10 @@ const router = express.Router();
 //sadece test amaçlı. auth control yapılmadı.
 router.get("/", (req, res) => {
     if (req.session.passport) {
-        res.send("Gizli sayfa.")
+        res.send("Giriş Başarılı! Anasayfadan devam edebilirsin.")
     }
     else {
-        res.send("Giriş yapmadınız.")
+        res.send("Giriş Başarısız. Kullanıcı adı şifreni kontrol et.")
     }
 })
 
