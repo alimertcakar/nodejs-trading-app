@@ -1,6 +1,8 @@
 import db from "./db.mjs";
 import { app } from "./routes.mjs";
 import { publishListing } from "./models/Listing.mjs";
+import cors from "cors";
+app.use(cors())
 
 
 

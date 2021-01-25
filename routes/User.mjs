@@ -19,6 +19,11 @@ passport.use(new LocalStrategy(
     }
 ));
 
+passport.serializeUser(function (user, done) {
+    global.userid = user.id;
+    done(null, user.id);
+});
+
 // passport.authenticate('local')
 router
     .post("/olustur", jsonParser, async (req, res) => {
@@ -33,10 +38,12 @@ router
         const result = await updateBalanceById(id, balance);
         res.send(result);
     })
-    .post('/giris', passport.authenticate('local', {
-        successRedirect: '/',
-        failureRedirect: '/hesap/giris',
-    }))
+    .post('/giris', passport.authenticate('local'), (req, res) => {
+        res.cookie('userid', global.userid, { maxAge: 2592000000 });  // Expires in one month
+
+        res.send("Giriş Başarılı");
+
+    })
     .get("/giris", (req, res) => { res.send("giriş yapılmadı.giriş yapmak için post at.") })
 
 export default router;
