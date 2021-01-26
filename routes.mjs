@@ -4,7 +4,7 @@ import passport from "passport";
 import bodyParser from 'body-parser';
 import cors from 'cors';
 import cookieparser from "cookie-parser";
-import expressession from "express-session";
+import expressession from 'cookie-session';
 
 app.use(cors());
 app.use(bodyParser.json());
