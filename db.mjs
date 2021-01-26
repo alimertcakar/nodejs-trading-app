@@ -1,7 +1,7 @@
 import createConnectionPool from '@databases/pg';
 import dotenv from "dotenv";
 
-if (process.env.NODE_ENV !== "production") {
+if (process.env.NODE_ENV !== "production" || true) { //or true <- kaldırılcak
     dotenv.config();
 }
 
