@@ -2,22 +2,19 @@ name: Docker Image CI
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
   pull_request:
-    branches: [ main ]
+    branches: [main]
 
 jobs:
-
   build:
-
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
-    - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag node-trading
-    - name: Tag the Docker image
-      run: docker tag eu.gcr.io/node-trading eu.gcr.io/node-trading
-    - name: Push the Docker image
-      run: docker push eu.gcr.io/node-trading 
- 
+      - uses: actions/checkout@v2
+      - name: Build the Docker image
+        run: docker build . --file Dockerfile --tag alimert/node-trading
+      - name: Tag the Docker image
+        run: docker tag alimert/node-trading eu.gcr.io/node-trading/node-trading
+      - name: Push the Docker image
+        run: docker push eu.gcr.io/node-trading/node-trading
