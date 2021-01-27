@@ -19,7 +19,8 @@ jobs:
           account_key: ${{ secrets.GCLOUD_KEY }}
       - name: gcloud docker
         run: gcloud auth configure-docker
-
+      - name: set account_key
+        run: gcloud config set account ACCOUNT 441987721455-compute@developer.gserviceaccount.com
         # üst kısım gcloud authentication
         # alt kısım docker a push
 
