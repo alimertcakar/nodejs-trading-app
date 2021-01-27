@@ -21,7 +21,7 @@ jobs:
         # üst kısım gcloud authentication
         # alt kısım docker a push
 
-      - name: Build the Docker image
+      - name: Build the Docker image.
         run: docker build . --file Dockerfile --tag alimert/node-trading
       - name: Tag the Docker image
         run: docker tag alimert/node-trading eu.gcr.io/node-trading/node-trading
