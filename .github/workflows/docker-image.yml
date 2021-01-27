@@ -17,6 +17,8 @@ jobs:
         uses: elgohr/gcloud-login-action@master
         with:
           account_key: ${{ secrets.GCLOUD_KEY }}
+      - name: gcloud docker
+        run: gcloud auth configure-docker
 
         # üst kısım gcloud authentication
         # alt kısım docker a push
