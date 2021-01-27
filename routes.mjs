@@ -5,6 +5,15 @@ import bodyParser from 'body-parser';
 import cors from 'cors';
 import cookieparser from "cookie-parser";
 import expressession from 'cookie-session';
+import swaggerUi from 'swagger-ui-express';
+import { createRequire } from "module";
+const require = createRequire(import.meta.url);
+const swaggerDocument = require('./swagger.json');
+
+
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+// app.use('/api/v1', router);
+
 
 app.use(cors());
 app.use(bodyParser.json());
