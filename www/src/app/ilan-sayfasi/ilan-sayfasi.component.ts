@@ -9,7 +9,17 @@ import { ListingsService } from '../ilanlar.service';
 })
 export class IlanSayfasiComponent implements OnInit {
   ilanId: any = '1';
-  listing: any = [];
+  listing: any = {
+    price: 'Yükleniyor...',
+    stock: 'Yükleniyor...',
+    description: 'Yükleniyor...',
+    user_id: 'Yükleniyor...',
+    ilanId: 'Yükleniyor...',
+    username: 'Yükleniyor...',
+    created_at_formatted: 'Yükleniyor...',
+    title: 'Yükleniyor...',
+    description: 'Yükleniyor...',
+  };
   constructor(public route: ActivatedRoute, listingService: ListingsService) {
     this.ilanId = this.route.snapshot.paramMap.get('id');
     listingService.getListing(this.ilanId.toString()).subscribe((data: any) => {

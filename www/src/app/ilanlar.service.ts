@@ -12,4 +12,10 @@ export class ListingsService {
   getListing(id: string) {
     return this.http.get<any>('/api/ilan/' + id);
   }
+  getUserListings(id: string) {
+    return this.http.get<any>(`/api/profil/${id}/ilanlari`);
+  }
+  getUser(id: string) {
+    return this.http.get<any>(`/api/profil/${id}`, { responseType: 'text' });
+  }
 }

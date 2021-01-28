@@ -26,9 +26,10 @@ function updateUsernameByIdOrUsername(id = "null", username, newUserName) {
 }
 
 function getUserById(id) {
-    pool.query(sql`SELECT *  FROM user_account
+    const res = pool.query(sql`SELECT *  FROM user_account
     WHERE id = ${id}
         `)
+    return res;
 }
 
 async function validateUser(username, pass) {

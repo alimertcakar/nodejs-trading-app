@@ -46,5 +46,7 @@ app.use("/ilan", ListingRoute);
 import TransactionRoute from "./routes/Transaction.mjs";
 app.use("/transfer", TransactionRoute);
 
+import ProfilRoute from "./routes/Profil.mjs";
+app.use("/profil", ProfilRoute);
 
 export { app };
