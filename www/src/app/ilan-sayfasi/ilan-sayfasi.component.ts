@@ -24,7 +24,6 @@ export class IlanSayfasiComponent implements OnInit {
     this.ilanId = this.route.snapshot.paramMap.get('id');
     listingService.getListing(this.ilanId.toString()).subscribe((data: any) => {
       this.listing = data[0];
-      console.log(this.listing);
     });
   }
 

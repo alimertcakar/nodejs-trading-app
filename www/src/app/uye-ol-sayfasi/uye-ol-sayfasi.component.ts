@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./uye-ol-sayfasi.component.scss'],
 })
 export class UyeOlSayfasiComponent implements OnInit {
+  auth;
   constructor(authService: AuthService, private router: Router) {
     this.auth = authService;
   }
