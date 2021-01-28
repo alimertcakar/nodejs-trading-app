@@ -33,7 +33,6 @@
       <input class="form-control" required ngModel #stock="ngModel" type="text" id="stock" name="stock" value="10"><br>
       <div *ngIf="stock.touched && !stock.valid" class="alert alert-danger">Bu alan gerekli!</div>
 
-      <div *ngIf="publisherId.touched && !publisherId.valid" class="alert alert-danger">Bu alan gerekli!</div>
       <button class="btn  btn-primary" type="submit" [disabled]="!ilanform.valid">Yolla</button>
     </div>
   </form>

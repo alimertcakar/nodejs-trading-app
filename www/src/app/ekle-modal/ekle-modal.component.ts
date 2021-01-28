@@ -13,14 +13,8 @@ export class EkleModalComponent implements OnInit {
   constructor(private router: Router) {}
 
   submit(ilanform: any) {
-    const {
-      title,
-      stock,
-      price,
-      publisherId,
-      description,
-    } = ilanform.form.value;
-
+    const { title, stock, price, description } = ilanform.form.value;
+    console.log(ilanform.form.value);
     axios
       .post('/api/ilan/olustur', {
         title: title,
@@ -31,7 +25,8 @@ export class EkleModalComponent implements OnInit {
       })
       .then((r) => {
         this.router.navigateByUrl('/');
-      });
+      })
+      .catch((e) => console.log(e));
   }
 
   ngOnInit(): void {}
