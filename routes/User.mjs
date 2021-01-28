@@ -29,6 +29,7 @@ router
     .post("/olustur", jsonParser, async (req, res) => {
         console.log(req.session)
         const { username, password } = req.body;
+        console.log(username)
         const result = await createUserAccount(username, password);
         res.send(result);
     })

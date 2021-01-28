@@ -12,15 +12,35 @@ export class AuthService {
     try {
       const UserData = { username, password };
       return this.http.post<any>('/api/hesap/giris', UserData);
-    } catch {
+    } catch (e) {
+      console.log(e);
       return 'Some error maybe happened.';
     }
   }
 
   register(username: string, password: string) {
-    const UserData = { username, password };
-    this.http.post<any>('/api/hesap/olustur', UserData);
-    this.router.navigateByUrl('/');
+    try {
+      const UserData = { username, password };
+      (async () => {
+        const rawResponse = await fetch('/api/hesap/olustur', {
+          method: 'POST',
+          headers: {
+            Accept: 'application/json',
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(UserData),
+        });
+        const content = await rawResponse.json();
+
+        console.log(content);
+      })();
+
+      return this.http.post<any>('/api/hesap/olustur', UserData);
+
+      // this.router.navigateByUrl('/');
+    } catch (e) {
+      console.log(e);
+    }
   }
 
   isLoggedIn() {
