@@ -14,7 +14,8 @@ export class AuthService {
       return this.http.post<any>('/api/hesap/giris', UserData);
     } catch (e) {
       console.log(e);
-      return 'Some error maybe happened.';
+      // return 'Some error maybe happened.';
+      return this.http.post<any>('/api/hesap/giris', {});
     }
   }
 
@@ -40,6 +41,7 @@ export class AuthService {
       return 'ben böyle frameworkun...';
     } catch (e) {
       console.log(e);
+      return this.http.post<any>('/api/hesap/giris', {});
     }
   }
 
