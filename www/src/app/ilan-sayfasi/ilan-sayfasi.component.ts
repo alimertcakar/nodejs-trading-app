@@ -12,7 +12,6 @@ export class IlanSayfasiComponent implements OnInit {
   listing: any = {
     price: 'Yükleniyor...',
     stock: 'Yükleniyor...',
-    description: 'Yükleniyor...',
     user_id: 'Yükleniyor...',
     ilanId: 'Yükleniyor...',
     username: 'Yükleniyor...',

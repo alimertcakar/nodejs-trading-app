@@ -6,6 +6,7 @@ import { AuthService } from '../auth.service';
   styleUrls: ['./giris-yap-sayfasi.component.scss'],
 })
 export class GirisYapSayfasiComponent implements OnInit {
+  auth;
   constructor(authService: AuthService) {
     this.auth = authService;
   }

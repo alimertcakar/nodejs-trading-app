@@ -16,6 +16,8 @@ export class ListingsService {
     return this.http.get<any>(`/api/profil/${id}/ilanlari`);
   }
   getUser(id: string) {
-    return this.http.get<any>(`/api/profil/${id}`, { responseType: 'text' });
+    return this.http.get<any>(`/api/profil/${id}`, {
+      responseType: 'text' as 'json',
+    });
   }
 }
