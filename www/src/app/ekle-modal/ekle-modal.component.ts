@@ -37,7 +37,7 @@ export class EkleModalComponent implements OnInit {
   ngOnInit(): void {}
 }
 
-function getCookieValue(a) {
+function getCookieValue(a: any) {
   var b = document.cookie.match('(^|;)\\s*' + a + '\\s*=\\s*([^;]+)');
   return b ? b.pop() : '';
 }

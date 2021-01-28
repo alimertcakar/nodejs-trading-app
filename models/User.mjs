@@ -25,6 +25,12 @@ function updateUsernameByIdOrUsername(id = "null", username, newUserName) {
         `)
 }
 
+function getUserById(id) {
+    pool.query(sql`SELECT *  FROM user_account
+    WHERE id = ${id}
+        `)
+}
+
 async function validateUser(username, pass) {
     const res = await pool.query(sql`SELECT id,username 
     FROM user_account 
@@ -54,9 +60,10 @@ async function updateBalanceById(id, balance) {
 }
 
 
+
 export {
     isExistingUsername, validateUser,
     createUser, deleteUserByUsername,
     updateUsernameByIdOrUsername, getUserListings,
-    updateBalanceById
+    updateBalanceById, getUserById
 }

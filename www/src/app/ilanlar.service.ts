@@ -9,4 +9,7 @@ export class ListingsService {
   getListings() {
     return this.http.get<any>('/api/ilan/');
   }
+  getListing(id: string) {
+    return this.http.get<any>('/api/ilan/' + id);
+  }
 }

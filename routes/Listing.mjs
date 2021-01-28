@@ -5,7 +5,7 @@ const jsonParser = bodyParser.json();
 import passport from "passport";
 const { session } = passport;
 
-import { publishNewListing, updateListingPrice, updateListingStock, getAllListings } from "../controllers/IlanController.mjs";
+import { publishNewListing, updateListingPrice, updateListingStock, getAllListings, getSingleListing } from "../controllers/IlanController.mjs";
 
 
 // passport.authenticate('local')
@@ -29,6 +29,10 @@ router
     })
     .get("/", async (req, res) => {
         let result = await getAllListings();
+        res.send(result)
+    })
+    .get("/:id", async (req, res) => {
+        let result = await getSingleListing(req.params.id);
         res.send(result)
     })
 

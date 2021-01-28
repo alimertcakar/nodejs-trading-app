@@ -1,1 +1,11 @@
-<p>ilan-sayfasi works!</p>
+<h1>İlan Detayı</h1>
+<h2>{{listing.title}}</h2>
+<h5>{{listing.description}}</h5>
+
+<p></p>
+<p>İlan Id: {{ilanId}}</p>
+<p>Satıcı: {{listing.user_id}}</p>
+<p>Stok: {{listing.stock}}</p>
+<p>Fiyat: {{listing.price}}</p>
+Satici: <a routerLink="/profil/{{listing.user_id}}">{{listing.username}}</a>
+<p>Yayınlanma Tarihi: {{listing.created_at_formatted}}</p>

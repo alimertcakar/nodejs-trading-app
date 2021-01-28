@@ -48,7 +48,9 @@ async function updateListingStock(stock, listingId) {
 
 async function getAllListings() {
     try {
-        const result = await pool.query(sql`SELECT * FROM listing`);
+        // const result = await pool.query(sql`SELECT * FROM listing`);
+        const result = await pool.query(sql`SELECT listing.*, user_account.username from listing join user_account on user_account.id = listing.user_id`);
+        console.log(result)
         return result;
     }
     catch (e) {
@@ -56,4 +58,16 @@ async function getAllListings() {
     }
 }
 
-export { publishListing, updateListingPrice, updateListingStock, getAllListings }
+async function getSingleListing(id) {
+    console.log(id)
+    try {
+        // const result = await pool.query(sql`SELECT listing.*, user_account.username from listing join user_account on user_account.id = listing.user_id`);
+        const result = await pool.query(sql`SELECT listing.*, to_char( listing.created_at, 'DD/MM/YYYY HH24:MI') as created_at_formatted, user_account.* from listing JOIN user_account on user_account.id = listing.user_id WHERE listing.id = ${id}`);
+        return result;
+    }
+    catch (e) {
+        return e;
+    }
+}
+
+export { publishListing, updateListingPrice, updateListingStock, getAllListings, getSingleListing }
