@@ -33,11 +33,11 @@ export class AuthService {
         const content = await rawResponse.json();
 
         console.log(content);
+        this.router.navigateByUrl('/');
       })();
 
-      return this.http.post<any>('/api/hesap/olustur', UserData);
-
-      // this.router.navigateByUrl('/');
+      // return this.http.post<any>('/api/hesap/olustur', UserData);
+      return 'ben böyle frameworkun...';
     } catch (e) {
       console.log(e);
     }
