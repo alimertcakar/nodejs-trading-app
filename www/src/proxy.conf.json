@@ -1,7 +1,7 @@
 {
   "/api": {
-    "target": "http://34.69.112.107:80",
+    "target": "http://localhost:80",
     "secure": false,
-    "pathRewrite": { "^/api": "http://34.69.112.107:80" }
+    "pathRewrite": { "^/api": "http://localhost:80" }
   }
 }

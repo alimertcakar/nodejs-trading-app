@@ -1,5 +1,5 @@
 {
-  "proxy": "34.69.112.107:80",
+  "proxy": "80",
   "name": "nodetrading",
   "version": "0.0.0",
   "scripts": {
