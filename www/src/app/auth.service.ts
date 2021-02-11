@@ -38,7 +38,7 @@ export class AuthService {
       })();
 
       // return this.http.post<any>('/api/hesap/olustur', UserData);
-      return 'ben böyle frameworkun...';
+      return 'neyi başaramadın';
     } catch (e) {
       console.log(e);
       return this.http.post<any>('/api/hesap/giris', {});
