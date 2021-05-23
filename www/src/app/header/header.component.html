@@ -25,7 +25,8 @@
       </ul>
       <form class="d-flex" style="min-width:300px">
         <input class="form-control me-2" type="search" placeholder="İlan, kategori veya marka ara" aria-label="Search"
-          style="background: #2f3546;border:none; color:rgb(47, 53, 70); font-weight:600">
+          style="background: #2f3546;border:none; color:rgb(250, 250, 250); font-weight:600"
+          (keyup.enter)="onAra($event.target.value)">
       </form>
       <a class="btn  ml-2" routerLink="/giris" style="color:#fff;font-size:12px">Giriş Yap</a>
       <a class="btn ml-2" routerLink="/kayit" style="color:#fff;font-size:12px">Üye Ol</a>

@@ -18,6 +18,7 @@ import { IlanEklemeSayfasiComponent } from './ilan-ekleme-sayfasi/ilan-ekleme-sa
 import { GirisYapSayfasiComponent } from './giris-yap-sayfasi/giris-yap-sayfasi.component';
 import { UyeOlSayfasiComponent } from './uye-ol-sayfasi/uye-ol-sayfasi.component';
 import { ProfilSayfasiComponent } from './profil-sayfasi/profil-sayfasi.component';
+import { AramaSayfasiComponent } from './arama-sayfasi/arama-sayfasi.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { ProfilSayfasiComponent } from './profil-sayfasi/profil-sayfasi.componen
     GirisYapSayfasiComponent,
     UyeOlSayfasiComponent,
     ProfilSayfasiComponent,
+    AramaSayfasiComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
   providers: [],
