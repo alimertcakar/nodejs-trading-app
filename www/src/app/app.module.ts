@@ -19,6 +19,7 @@ import { GirisYapSayfasiComponent } from './giris-yap-sayfasi/giris-yap-sayfasi.
 import { UyeOlSayfasiComponent } from './uye-ol-sayfasi/uye-ol-sayfasi.component';
 import { ProfilSayfasiComponent } from './profil-sayfasi/profil-sayfasi.component';
 import { AramaSayfasiComponent } from './arama-sayfasi/arama-sayfasi.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,7 @@ import { AramaSayfasiComponent } from './arama-sayfasi/arama-sayfasi.component';
     ProfilSayfasiComponent,
     AramaSayfasiComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule, BrowserAnimationsModule],
   providers: [],
   bootstrap: [AppComponent],
 })
