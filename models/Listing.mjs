@@ -15,12 +15,14 @@ pool.query(sql`CREATE TABLE IF NOT EXISTS listing(
 
 
 async function publishListing(title, description, price, stock, publisherId, kategoriId) {
+    console.log(kategoriId, "model")
     try {
         const result = await pool.query(sql`INSERT INTO listing(title,description,price,stock,user_id, kategori_id) 
-    VALUES (${title}, ${description},${price},${stock},${publisherId}), ${kategoriId} `);
+    VALUES (${title}, ${description},${price},${stock},${publisherId}, ${kategoriId})`);
         return "İlan başarıyla eklendi";
     }
     catch (e) {
+        console.log(e)
         return e;
     }
 }

@@ -13,6 +13,7 @@ router
     .post("/olustur", jsonParser, async (req, res) => {
         const { title, description, price, stock, publisherId, category } = req.body;
         const kategoriId = category;
+        console.log(kategoriId, "router")
         const result = await publishNewListing(title, description, price, stock, publisherId, kategoriId);
         res.send(result)
     })
