@@ -10,7 +10,7 @@ import { AramaService } from '../arama.service';
 export class AramaSayfasiComponent implements OnInit {
   term: string | null = '';
   arama: any;
-  aramaSonuclari: any;
+  listings: any;
 
   constructor(public route: ActivatedRoute, aramaService: AramaService) {
     this.term = this.route.snapshot.paramMap.get('term');
@@ -24,7 +24,7 @@ export class AramaSayfasiComponent implements OnInit {
       .toPromise()
       .then((res: any) => {
         console.log(res, 'arama sonuclari');
-        this.aramaSonuclari = res;
+        this.listings = res;
       })
       .catch(() => {
         console.log('network ya da server hatası @ arama');

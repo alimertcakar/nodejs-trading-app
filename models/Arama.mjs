@@ -4,8 +4,11 @@ import sql from '@databases/sql';
 
 async function ara(term) {
     console.log(term)
+    const _term = `%${term}%`
     try {
-        const result = await pool.query(sql`SELECT * FROM listing WHERE title ILIKE '%${term}%' OR description ILIKE '%${term}%'`);
+
+        console.log(sql`SELECT * FROM listing WHERE title ILIKE ${_term}  OR description ILIKE ${_term}`)
+        const result = await pool.query(sql`SELECT * FROM listing WHERE title ILIKE ${_term}  OR description ILIKE ${_term} `);
         return result;
     }
     catch (e) {
