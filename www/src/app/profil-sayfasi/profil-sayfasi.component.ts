@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { string } from 'joi';
 import { ListingsService } from '../ilanlar.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-profil-sayfasi',
