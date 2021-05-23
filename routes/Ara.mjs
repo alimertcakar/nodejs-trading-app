@@ -9,7 +9,7 @@ import { ara } from "../controllers/AramaController.mjs";
 
 
 router
-    .post("/ara", jsonParser, async (req, res) => {
+    .post("/", jsonParser, async (req, res) => {
         const { term } = req.body;
         const result = await ara(term);
         res.send(result)

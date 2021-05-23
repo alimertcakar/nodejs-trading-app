@@ -50,4 +50,8 @@ app.use("/transfer", TransactionRoute);
 import ProfilRoute from "./routes/Profil.mjs";
 app.use("/profil", ProfilRoute);
 
+import AramaRoute from "./routes/Ara.mjs";
+app.use("/ara", AramaRoute);
+
+
 export { app };
