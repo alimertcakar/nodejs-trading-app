@@ -11,8 +11,9 @@ import { publishNewListing, updateListingPrice, updateListingStock, getAllListin
 // passport.authenticate('local')
 router
     .post("/olustur", jsonParser, async (req, res) => {
-        const { title, description, price, stock, publisherId } = req.body;
-        const result = await publishNewListing(title, description, price, stock, publisherId);
+        const { title, description, price, stock, publisherId, category } = req.body;
+        const kategoriId = category;
+        const result = await publishNewListing(title, description, price, stock, publisherId, kategoriId);
         res.send(result)
     })
     .post("/fiyatGuncelle", jsonParser, async (req, res) => {

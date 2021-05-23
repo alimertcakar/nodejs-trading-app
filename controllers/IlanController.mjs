@@ -5,8 +5,8 @@ import {
 } from "../models/Listing.mjs";
 
 
-async function publishNewListing(title, description, price, stock, publisherId) {
-    const res = await publishListing(title, description, price, stock, publisherId);
+async function publishNewListing(title, description, price, stock, publisherId, kategoriId) {
+    const res = await publishListing(title, description, price, stock, publisherId, kategoriId);
     return res;
 }
 async function updateListingPrice(price, listingId) {

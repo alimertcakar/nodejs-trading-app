@@ -13,7 +13,7 @@ export class EkleModalComponent implements OnInit {
   constructor(private router: Router) {}
 
   submit(ilanform: any) {
-    const { title, stock, price, description } = ilanform.form.value;
+    const { title, stock, price, description, category } = ilanform.form.value;
     console.log(ilanform.form.value);
     axios
       .post('/api/ilan/olustur', {
@@ -22,6 +22,7 @@ export class EkleModalComponent implements OnInit {
         price: price,
         publisherId: getCookieValue('userid'),
         description: description,
+        category: category,
       })
       .then((r) => {
         this.router.navigateByUrl('/');
