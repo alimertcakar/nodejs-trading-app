@@ -1,0 +1,12 @@
+<h3 class="mb-3">{{listings[0].kategori_name}} kategorisindeki ilanlar</h3>
+<div class="ilan-container">
+  <div class="ilan" *ngFor="let listing of listings; let i = index" routerLink="/ilan/{{listing.id}}">
+    <span class="ilan__baslik"> {{listing.title}} </span>
+    <span class="ilan__aciklama"> {{listing.description}} </span>
+    <div class="ilan__stok-ve-fiyat-container">
+      <span> Stok: {{listing.stock}} </span>
+      <span> Satıcı: {{listing.username}} </span>
+      <span style="position:relative;top:-25px;color: #910000;"> {{listing.price}} TL </span>
+    </div>
+  </div>
+</div>

@@ -7,6 +7,7 @@ import { GirisYapSayfasiComponent } from './giris-yap-sayfasi/giris-yap-sayfasi.
 import { UyeOlSayfasiComponent } from './uye-ol-sayfasi/uye-ol-sayfasi.component';
 import { ProfilSayfasiComponent } from './profil-sayfasi/profil-sayfasi.component';
 import { AramaSayfasiComponent } from './arama-sayfasi/arama-sayfasi.component';
+import { KategoriSayfasiComponent } from './kategori-sayfasi/kategori-sayfasi.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponentComponent, pathMatch: 'full' },
@@ -16,6 +17,7 @@ const routes: Routes = [
   { path: 'giris', component: GirisYapSayfasiComponent },
   { path: 'kayit', component: UyeOlSayfasiComponent },
   { path: 'ara/:term', component: AramaSayfasiComponent },
+  { path: 'kategori/:term', component: KategoriSayfasiComponent },
 ];
 
 @NgModule({

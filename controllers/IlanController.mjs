@@ -1,7 +1,8 @@
 import {
     getAllListings as ListingModelGetAllListings, publishListing, updateListingPrice as ListingModelUpdateListingPrice,
     updateListingStock as ListingModelUpdateListingStock,
-    getSingleListing as ListingModelGetSingleListing
+    getSingleListing as ListingModelGetSingleListing,
+    getCategoryAllListings as ListingModelGetCategoryAllListings
 } from "../models/Listing.mjs";
 
 
@@ -27,5 +28,9 @@ async function getSingleListing(id) {
     const res = await ListingModelGetSingleListing(id);
     return res;
 }
+async function getCategoryAllListings(id) {
+    const res = await ListingModelGetCategoryAllListings(id);
+    return res;
+}
 
-export { publishNewListing, updateListingPrice, updateListingStock, getAllListings, getSingleListing };
+export { publishNewListing, updateListingPrice, updateListingStock, getAllListings, getSingleListing, getCategoryAllListings };

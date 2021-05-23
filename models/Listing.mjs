@@ -60,6 +60,23 @@ async function getAllListings() {
     }
 }
 
+
+async function getCategoryAllListings(kategori) {
+    try {
+        // const result = await pool.query(sql`SELECT * FROM listing`);
+        const result = await pool.query(sql`SELECT listing.*, user_account.username, kategori.* from listing
+         join user_account on user_account.id = listing.user_id
+         join kategori on kategori.id = ${kategori}
+         where listing.kategori_id = ${kategori}
+          `);
+        return result;
+    }
+    catch (e) {
+        console.log(e)
+        return e;
+    }
+}
+
 async function getSingleListing(id) {
     try {
         // const result = await pool.query(sql`SELECT listing.*, user_account.username from listing join user_account on user_account.id = listing.user_id`);
@@ -71,4 +88,4 @@ async function getSingleListing(id) {
     }
 }
 
-export { publishListing, updateListingPrice, updateListingStock, getAllListings, getSingleListing }
+export { publishListing, updateListingPrice, updateListingStock, getAllListings, getSingleListing, getCategoryAllListings }

@@ -5,7 +5,7 @@ const jsonParser = bodyParser.json();
 import passport from "passport";
 const { session } = passport;
 
-import { publishNewListing, updateListingPrice, updateListingStock, getAllListings, getSingleListing } from "../controllers/IlanController.mjs";
+import { publishNewListing, updateListingPrice, updateListingStock, getAllListings, getSingleListing, getCategoryAllListings } from "../controllers/IlanController.mjs";
 
 
 // passport.authenticate('local')
@@ -35,5 +35,12 @@ router
         let result = await getSingleListing(req.params.id);
         res.send(result)
     })
+    .post("/kategori", async (req, res) => {
+        console.log("istek geldi")
+        const { term: kategori } = req.body;
+        let result = await getCategoryAllListings(kategori);
+        res.send(result)
+    })
+
 
 export default router;
