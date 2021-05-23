@@ -2,7 +2,6 @@ import express from "express";
 const app = express();
 import passport from "passport";
 import bodyParser from 'body-parser';
-import cors from 'cors';
 import cookieparser from "cookie-parser";
 import expressession from 'cookie-session';
 import swaggerUi from 'swagger-ui-express';
