@@ -1,0 +1,20 @@
+.kullanici {
+  flex: calc(25% - 5px);
+  max-width: calc(25% - 5px);
+  border: 2px solid #e6e6e6;
+  padding: 15px;
+  border-radius: 5px;
+  height: 200px;
+  cursor: pointer;
+}
+.kullanicilar {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.kullanici-title {
+  display: flex;
+  font-weight: 500;
+}

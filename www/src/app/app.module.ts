@@ -27,6 +27,7 @@ import { AdminKullanicilarComponent } from './admin-kullanicilar/admin-kullanici
 import { AdminIlanlarComponent } from './admin-ilanlar/admin-ilanlar.component';
 import { AdminKategoriComponent } from './admin-kategori/admin-kategori.component';
 import { AdminAramaComponent } from './admin-arama/admin-arama.component';
+import { MatRippleModule } from '@angular/material/core';
 
 @NgModule({
   declarations: [
@@ -57,6 +58,7 @@ import { AdminAramaComponent } from './admin-arama/admin-arama.component';
     FormsModule,
     BrowserAnimationsModule,
     MatTabsModule,
+    MatRippleModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
