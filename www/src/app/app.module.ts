@@ -21,6 +21,12 @@ import { ProfilSayfasiComponent } from './profil-sayfasi/profil-sayfasi.componen
 import { AramaSayfasiComponent } from './arama-sayfasi/arama-sayfasi.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { KategoriSayfasiComponent } from './kategori-sayfasi/kategori-sayfasi.component';
+import { AdminComponent } from './admin/admin.component';
+import { MatTabsModule } from '@angular/material/tabs';
+import { AdminKullanicilarComponent } from './admin-kullanicilar/admin-kullanicilar.component';
+import { AdminIlanlarComponent } from './admin-ilanlar/admin-ilanlar.component';
+import { AdminKategoriComponent } from './admin-kategori/admin-kategori.component';
+import { AdminAramaComponent } from './admin-arama/admin-arama.component';
 
 @NgModule({
   declarations: [
@@ -38,8 +44,20 @@ import { KategoriSayfasiComponent } from './kategori-sayfasi/kategori-sayfasi.co
     ProfilSayfasiComponent,
     AramaSayfasiComponent,
     KategoriSayfasiComponent,
+    AdminComponent,
+    AdminKullanicilarComponent,
+    AdminIlanlarComponent,
+    AdminKategoriComponent,
+    AdminAramaComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule, BrowserAnimationsModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule,
+    BrowserAnimationsModule,
+    MatTabsModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })

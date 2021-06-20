@@ -8,6 +8,7 @@ import { UyeOlSayfasiComponent } from './uye-ol-sayfasi/uye-ol-sayfasi.component
 import { ProfilSayfasiComponent } from './profil-sayfasi/profil-sayfasi.component';
 import { AramaSayfasiComponent } from './arama-sayfasi/arama-sayfasi.component';
 import { KategoriSayfasiComponent } from './kategori-sayfasi/kategori-sayfasi.component';
+import { AdminComponent } from './admin/admin.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponentComponent, pathMatch: 'full' },
@@ -18,6 +19,7 @@ const routes: Routes = [
   { path: 'kayit', component: UyeOlSayfasiComponent },
   { path: 'ara/:term', component: AramaSayfasiComponent },
   { path: 'kategori/:term', component: KategoriSayfasiComponent },
+  { path: 'admin', component: AdminComponent },
 ];
 
 @NgModule({
