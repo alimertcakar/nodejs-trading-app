@@ -18,3 +18,10 @@
   display: flex;
   font-weight: 500;
 }
+
+.kullanici-detail {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 8px;
+}

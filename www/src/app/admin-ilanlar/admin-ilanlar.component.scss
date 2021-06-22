@@ -1,0 +1,33 @@
+.ilan {
+  flex: calc(25% - 5px);
+  max-width: calc(25% - 5px);
+  border: 2px solid #e6e6e6;
+  padding: 15px;
+  border-radius: 5px;
+  height: 100px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  text-transform: capitalize;
+}
+.ilanlar {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.ilan-title {
+  display: flex;
+  font-weight: 500;
+  text-transform: capitalize;
+}
+
+.ilan-satici {
+  font-weight: 500;
+  flex: 1;
+  justify-self: flex-end;
+  text-transform: capitalize;
+  top: 8px;
+  position: relative;
+}

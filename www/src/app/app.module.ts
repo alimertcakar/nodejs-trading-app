@@ -28,6 +28,7 @@ import { AdminIlanlarComponent } from './admin-ilanlar/admin-ilanlar.component';
 import { AdminKategoriComponent } from './admin-kategori/admin-kategori.component';
 import { AdminAramaComponent } from './admin-arama/admin-arama.component';
 import { MatRippleModule } from '@angular/material/core';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 
 @NgModule({
   declarations: [
@@ -59,6 +60,7 @@ import { MatRippleModule } from '@angular/material/core';
     BrowserAnimationsModule,
     MatTabsModule,
     MatRippleModule,
+    MatSlideToggleModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
