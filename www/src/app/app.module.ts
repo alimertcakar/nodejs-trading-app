@@ -29,6 +29,8 @@ import { AdminKategoriComponent } from './admin-kategori/admin-kategori.componen
 import { AdminAramaComponent } from './admin-arama/admin-arama.component';
 import { MatRippleModule } from '@angular/material/core';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { MatInputModule } from '@angular/material/input';
+import { AdminAnalizComponent } from './admin-analiz/admin-analiz.component';
 
 @NgModule({
   declarations: [
@@ -51,6 +53,7 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
     AdminIlanlarComponent,
     AdminKategoriComponent,
     AdminAramaComponent,
+    AdminAnalizComponent,
   ],
   imports: [
     BrowserModule,
@@ -61,6 +64,7 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
     MatTabsModule,
     MatRippleModule,
     MatSlideToggleModule,
+    MatInputModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
