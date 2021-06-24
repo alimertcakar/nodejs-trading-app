@@ -31,6 +31,7 @@ import { MatRippleModule } from '@angular/material/core';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatInputModule } from '@angular/material/input';
 import { AdminAnalizComponent } from './admin-analiz/admin-analiz.component';
+import { MatTableModule } from '@angular/material/table';
 
 @NgModule({
   declarations: [
@@ -65,6 +66,7 @@ import { AdminAnalizComponent } from './admin-analiz/admin-analiz.component';
     MatRippleModule,
     MatSlideToggleModule,
     MatInputModule,
+    MatTableModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
