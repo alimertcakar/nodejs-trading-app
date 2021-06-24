@@ -17,4 +17,14 @@ export class AramaService {
       return this.http.post<any>('/api/ara', {});
     }
   }
+
+  eslestirmeGetir(term: string) {
+    try {
+      return this.http.get<any>('/api/ara/eslestirme');
+    } catch (e) {
+      console.log(e);
+      // return 'Some error maybe happened.';
+      return this.http.get<any>('/api/ara/eslestirme', {});
+    }
+  }
 }

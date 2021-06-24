@@ -2,7 +2,7 @@
   <div class="d-flex">
     <div class="font-weight-bold mb-4 mt-2">Arama eşleştirme listesi</div>
   </div>
-  <div class="d-flex">
+  <!-- <div class="d-flex">
     <mat-form-field class="mr-4">
       <mat-label>Arama terimi</mat-label>
       <input matInput placeholder="Örn: moto" value="motosiklet" class="mr-2">
@@ -11,5 +11,42 @@
       <mat-label>Eşleştirilecek terim</mat-label>
       <input matInput placeholder="Örn: motosiklet" value="iki teker" class="ml-2">
     </mat-form-field>
-  </div>
+  </div> -->
 </div>
+
+<div *ngFor="let eslestirme of eslestirmeler; let index = index;" class="d-flex ml-3">
+  <mat-form-field class="mr-4" style="max-height:50px">
+    <mat-label>Arama terimi</mat-label>
+    <input matInput placeholder="Örn: moto" value="{{eslestirme.terim}}" class="mr-2">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Eşleştirilecek terim</mat-label>
+    <input matInput placeholder="Örn: motosiklet" value="{{eslestirme.eslestirme}}" class="ml-2">
+  </mat-form-field>
+</div>
+
+
+<form #ilanform="ngForm" (ngSubmit)="eslestirmeEkle(ilanform)" class="ml-3">
+  <div class="d-flex" style="gap:5px; max-width:350px">
+    <mat-form-field>
+      <mat-label>Arama terimi</mat-label>
+      <input matInput ngModel #terim="ngModel" type="text" value="" class="col-7 form-control" style="width:300px;"
+        name="terim">
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Eşleştirilecek terim</mat-label>
+      <input matInput ngModel #eslestirme="ngModel" type="text" value="" class="col-7 form-control" name="eslestirme"
+        style="width:300px;">
+    </mat-form-field>
+
+    <button class="btn btn-primary d-flex" style="min-width:150px;max-height:50px; top:15px; align-items:center;"
+      matRipple type="submit">
+      Eşleştirme Ekle
+    </button>
+  </div>
+
+
+
+
+</form>

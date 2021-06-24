@@ -1,5 +1,7 @@
 import {
-    ara as AramaModelAra
+    ara as AramaModelAra,
+    eslestirmeEkle as AramaModelEslestirmeEkle,
+    eslestirmeGetir as AramaModelEslestirmeGetir
 } from "../models/Arama.mjs";
 
 
@@ -9,4 +11,13 @@ async function ara(term) {
     return res;
 }
 
-export { ara };
+async function eslestirmeEkle(...rest) {
+    const res = await AramaModelEslestirmeEkle(rest);
+    return res;
+}
+async function eslestirmeGetir() {
+    const res = await AramaModelEslestirmeGetir();
+    return res;
+}
+
+export { ara, eslestirmeEkle, eslestirmeGetir };
