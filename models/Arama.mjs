@@ -16,7 +16,7 @@ async function ara(term) {
     const _term = `%${term}%`
     try {
         const eslestirilenTerimlerRows = await pool.query(sql`select distinct terim,eslestirme from eslestirmeler WHERE terim ILIKE ${_term} `);
-        const similarityArr = "'%(" + eslestirilenTerimlerRows.map(row => row.eslestirme).map(val => val + "|").join("").slice(0, -1) + ")%'";
+        const similarityArr = "%(" + eslestirilenTerimlerRows.map(row => row.eslestirme).map(val => val + "|").join("").slice(0, -1) + ")%";
         console.log(sql`SELECT * FROM listing WHERE title ILIKE ${_term}  OR description ILIKE ${_term} or lower(title) similar to  ${similarityArr}`)
         const result = await pool.query(sql`SELECT * FROM listing WHERE title ILIKE ${_term}  OR description ILIKE ${_term} or lower(title) similar to  ${similarityArr} `);
         return result;
