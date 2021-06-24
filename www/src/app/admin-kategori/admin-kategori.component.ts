@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AdminService } from '../admin.service';
 
 @Component({
   selector: 'app-admin-kategori',
@@ -6,11 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./admin-kategori.component.scss'],
 })
 export class AdminKategoriComponent implements OnInit {
-  constructor() {}
+  admin: any;
+  constructor(adminService: AdminService) {
+    this.admin = adminService;
+  }
 
   ngOnInit(): void {}
 
-  kategoriGuncelle(e) {
-    alert(e);
+  kategoriGuncelle(term: string) {
+    this.admin.kategoriGuncelle(term);
   }
 }

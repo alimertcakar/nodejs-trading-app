@@ -44,4 +44,18 @@ export class AdminService {
       return this.http.post<any>('/api/ara', {});
     }
   }
+
+  kategoriGuncelle(term: string) {
+    alert(term + 'kategorisi güncellendi');
+    try {
+      // return this.http.post<any>('/api/ilan-getir', { term });
+    } catch (e) {
+      // return 'Some error maybe happened.';
+      // return this.http.post<any>('/api/ara', {});
+    }
+  }
+
+  kullaniciGuncelle() {
+    alert('kullanıcı güncellendi');
+  }
 }
