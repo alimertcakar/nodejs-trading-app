@@ -5,7 +5,7 @@ const jsonParser = bodyParser.json();
 import passport from "passport";
 import LocalStrategy from 'passport-local';
 import { createUserAccount } from "../controllers/UserController.mjs";
-import { validateUser, updateBalanceById } from "../models/User.mjs";
+import { validateUser, updateBalanceById, getAllUsers } from "../models/User.mjs";
 const { session } = passport;
 
 passport.use(new LocalStrategy(
@@ -46,5 +46,10 @@ router
 
     })
     .get("/giris", (req, res) => { res.send("giriş yapılmadı.giriş yapmak için post at.") })
+    .get("/all", async (req, res) => {
+        const result = await getAllUsers();
+        res.send(result);
+
+    })
 
 export default router;

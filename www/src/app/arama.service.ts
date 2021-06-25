@@ -27,4 +27,14 @@ export class AramaService {
       return this.http.get<any>('/api/ara/eslestirme', {});
     }
   }
+
+  kullaniciGetir(term: string) {
+    try {
+      return this.http.get<any>('/api/hesap/all');
+    } catch (e) {
+      console.log(e);
+      // return 'Some error maybe happened.';
+      return this.http.get<any>('/api/hesap/all', {});
+    }
+  }
 }

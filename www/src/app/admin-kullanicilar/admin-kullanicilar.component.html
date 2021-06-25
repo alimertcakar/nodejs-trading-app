@@ -1,12 +1,12 @@
 <div class="kullanicilar">
-  <div class="kullanici">
-    <div class="kullanici-title"> Kullanıcı</div>
+  <div *ngFor="let kullanici of kullanicilar; let i = index" class="kullanici">
+    <div class="kullanici-title"> {{kullanici.username}}</div>
     <div class="kullanici-detail">
       <mat-slide-toggle>Yasaklı</mat-slide-toggle>
       <mat-slide-toggle>İlan verebilir</mat-slide-toggle>
       <mat-slide-toggle>İlan görebilir</mat-slide-toggle>
-      <div>İlan sayısı: 100</div>
-      <div>Son aktivite: 27.02.2019</div>
+      <!-- <div>İlan sayısı: 100</div> -->
+      <!-- <div>Son aktivite: 27.02.2019</div> -->
     </div>
   </div>
 

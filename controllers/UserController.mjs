@@ -1,6 +1,7 @@
 import {
     updateBalanceById as UserModelUpdateBalanceById, isExistingUsername, validateUser, createUser, deleteUserByUsername, updateUsernameByIdOrUsername,
-    getUserListings as UserModelGetUserListings, getUserById as UserModelGetUserById
+    getUserListings as UserModelGetUserListings, getUserById as UserModelGetUserById,
+    getAllUsers as UserModelGetAllUsers
 } from "../models/User.mjs";
 
 async function createUserAccount(username, password) {
@@ -25,5 +26,9 @@ async function getUserListings(id) {
     const res = await UserModelGetUserListings(id);
     return (res)
 }
+async function getAllUsers(id) {
+    const res = await UserModelGetAllUsers(id);
+    return (res)
+}
 
-export { createUserAccount, updateBalanceById, getUserbyId, getUserListings };
+export { createUserAccount, updateBalanceById, getUserbyId, getUserListings, getAllUsers };

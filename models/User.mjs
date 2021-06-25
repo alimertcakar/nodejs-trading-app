@@ -60,11 +60,16 @@ async function updateBalanceById(id, balance) {
     return res[0];
 }
 
+async function getAllUsers() {
+    const res = await pool.query(sql`Select * from user_account`)
+    return res;
+}
+
 
 
 export {
     isExistingUsername, validateUser,
     createUser, deleteUserByUsername,
     updateUsernameByIdOrUsername, getUserListings,
-    updateBalanceById, getUserById
+    updateBalanceById, getUserById, getAllUsers
 }
